@@ -6,9 +6,9 @@
  * @n: integer to be printed
  * Return: number of passes
  */
-int print_numbers(int n)
+int print_numbers(int n, unsigned int i)
 {
-	unsigned int n1, i = 0;
+	int n1;
 
 	if (n < 0)
 	{
@@ -18,14 +18,15 @@ int print_numbers(int n)
 	} else
 	{
 		n1 = n;
-		i++;
 	}
-
-	if (n1 / 10)
+	/* my base case for the recursion */
+	if ((n1 / 10) == 0)
 	{
-		print_numbers((n1 / 10));
+		_putchar(n1 + '0');
+		return (++i);
 	}
 
+	i = print_numbers((n1 / 10), i + 1);
 	_putchar((n1 % 10) + '0');
 	return (i);
 }
@@ -46,7 +47,7 @@ int print_dec(va_list data)
 	 * project the only difference is have to keep track of the specifier
 	 * count
 	 */
-	i = print_numbers(num);
+	i = print_numbers(num, i);
 
 	return (i);
 }
