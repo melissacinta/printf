@@ -8,23 +8,37 @@
 
 int _printf(const char *format, ...)
 {
-	int i;
+	int i, j, length = 0;
 	va_list args;
 
-	specifiers arr[] =
+	specifier arr[] =
 	{
-		{"%s", print_string}, {"%c", print_char}
+		{"%d", print_dec}
 	};
 
+	va_start(args, format);
 	if (format == NULL)
-		return;
+		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		_putchar(format[i];
+		j = 0;
+
+		while (j >= 0)
+		{
+			if ((arr[j].spec[0] == format[i]) && (arr[j].spec[1] == format[i + 1]))
+			{
+				length += arr[j].f_ptr(args);
+				i = i + 2;
+				break;
+			}
+			j--;
+		}
+		_putchar(format[i]);
+		length++;
 	}
-	return (i - 1);
 
 
 	va_end(args);
+	return (length);
 }
