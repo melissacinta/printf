@@ -15,15 +15,11 @@ int print_string(va_list data)
 		for (len = 0; str[len] != '\0'; len++)
 		{} /* I used this loop to get the lenght of the string*/
 
-		for (i = 0; i < len; i++)
-		{
-			_putchar(str[i]);
-		}
-		/*while (i < len)
+		while (i < len)
 		{
 			_putchar(str[i]);
 			i++;
-		}*/
+		}
 		return (len - 1);
 	}
 	return (-1);
