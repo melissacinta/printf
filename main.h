@@ -9,7 +9,7 @@
  * @spec: a char pointer to hold individual specifier type
  * @f_ptr:a funtion pointer that  executes corresponding function to the spec.
  */
-struct formats
+typedef struct formats
 {
 	char *spec;
 	int (*f_ptr)();
@@ -18,7 +18,8 @@ struct formats
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-
+int print_numbers(int n);
+int print_dec(va_list data);
 
 
 #endif
