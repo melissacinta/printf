@@ -21,6 +21,6 @@ int _printf(const char *format, ...);
 int print_char(va_list data);
 int print_numbers(int n);
 int print_dec(va_list data);
-
+int print_string(va_list data);
 
 #endif
