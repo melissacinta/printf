@@ -18,14 +18,16 @@ int print_numbers(int n)
 	} else
 	{
 		n1 = n;
-		i++;
 	}
 
-	if (n1 / 10)
+	if ((n1 / 10) == 0)
 	{
+		_putchar(n1 + '0');
 		print_numbers((n1 / 10));
+		return (i + 1);
 	}
 
+	i = print_numbers((n1 / 10), i + 1);
 	_putchar((n1 % 10) + '0');
 	return (i);
 }
@@ -46,7 +48,7 @@ int print_dec(va_list data)
 	 * project the only difference is have to keep track of the specifier
 	 * count
 	 */
-	i = print_numbers(num);
+	i = print_numbers(num, i);
 
 	return (i);
 }
