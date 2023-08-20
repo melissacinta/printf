@@ -13,7 +13,7 @@ typedef struct formats
 {
 	char *spec;
 	int (*f_ptr)();
-}specifier;
+} specifier;
 
 
 int _putchar(char c);
