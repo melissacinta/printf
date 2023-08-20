@@ -6,11 +6,11 @@
 * Return: returns the number of character printed
 */
 
-int print_char(va_list data)
+int print_char(va_list data) /*takes in the va_list passed form _printf func.*/
 {
-	if (data != NULL)
+	if (data != NULL) /*guards agains NULL character input*/
 	{
-		_putchar(va_arg(data, int);
+		_putchar(va_arg(data, int));
 	}
-	return (1);
+	return (1); /*returns the total number of character it printed*/
 }
