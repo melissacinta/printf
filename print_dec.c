@@ -6,9 +6,9 @@
  * @n: integer to be printed
  * Return: number of passes
  */
-int print_numbers(int n)
+int print_numbers(int n, unsigned int i)
 {
-	unsigned int n1, i = 0;
+	int n1;
 
 	if (n < 0)
 	{
@@ -19,12 +19,11 @@ int print_numbers(int n)
 	{
 		n1 = n;
 	}
-
+	/* my base case for the recursion */
 	if ((n1 / 10) == 0)
 	{
 		_putchar(n1 + '0');
-		print_numbers((n1 / 10));
-		return (i + 1);
+		return (++i);
 	}
 
 	i = print_numbers((n1 / 10), i + 1);
