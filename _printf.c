@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 /* in the header file i had to add typdef to the struct it was failing */
 	specifier arr[] = {{"%d", print_dec}, {"%c", print_char},
-	{"%s", print_string}};
+	{"%s", print_string},{"%i", print_int}};
 
 	va_start(args, format);
 	if (format == NULL)
@@ -29,7 +29,7 @@ Loop:
 		 * intialize this to (arr.length - 1). i am using 0 because
 		 * currently specifiers array only contains one item which is at index 0
 		 */
-		j = 2;
+		j = 3;
 		while (j >= 0)
 		{
 			/**
