@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	 * here i added two more variables to keep track of the arr[] length
 	 * and the length of substitutions using length and j respectively
 	 */
-	int i, j, length = 0;
+	int i = 0, j, length = 0;
 	va_list args;
 
 /* in the header file i had to add typdef to the struct it was failing */
@@ -22,7 +22,8 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+Loop:
+	while (format[i] != '\0')
 	{
 		/**
 		 * intialize this to (arr.length - 1). i am using 0 because
@@ -40,12 +41,13 @@ int _printf(const char *format, ...)
 				length += arr[j].f_ptr(args);
 				/* jump to places if we succesfully enter this statement */
 				i = i + 2;
-				break;
+				goto Loop;
 			}
 			j--;
 		}
 		_putchar(format[i]);
 		length++;
+		i++;
 	}
 	va_end(args);
 	return (length);
