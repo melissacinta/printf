@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * print_numbers - prints an integer
+ * print_numbers -  recursively prints out numbers in base 10 irrespective
+ * of their signage
  * @n: integer to be printed
  * Return: number of passes
  */
@@ -39,6 +40,12 @@ int print_dec(va_list data)
 	unsigned int i = 0;
 	int num = va_arg(data, int);
 
+	/**
+	 * here i am calling a recursive function to handle printing of numbers
+	 * this function is exactly similing to task 101 of more functions
+	 * project the only difference is have to keep track of the specifier
+	 * count
+	 */
 	i = print_numbers(num);
 
 	return (i);
