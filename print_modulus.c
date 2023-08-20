@@ -3,7 +3,7 @@
 /**
  *print_modulus - prints the % symbol when passed into the printf function
  *@data: the name given to the va_list
- *@Return: returns the number of printed charcter
+ *Return: returns the number of printed charcter
  */
 
 
