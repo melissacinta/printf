@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	{"%b", print_binary}};
 
 	va_start(args, format);
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 Loop:
 	while (format[i] != '\0')
