@@ -20,7 +20,7 @@ int print_string(va_list data)
 			_putchar(str[i]);
 			i++;
 		}
-		return (len - 1);
+		return (len);
 	}
 	return (-1);
 }
