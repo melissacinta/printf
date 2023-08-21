@@ -11,7 +11,12 @@ int print_numbers(int n, unsigned int i)
 {
 	int n1;
 
-	if (n < 0)
+	if (n == INT_MIN)
+	{
+		n1 = INT_MAX;
+		_putchar('-');
+		i++;
+	} else if (n < 0)
 	{
 		n1 = -n;
 		_putchar('-');
