@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	specifier arr[] = {{"%d", print_dec}, {"%c", print_char},
-	{"%s", print_string}, {"%i", print_int}};
+	{"%s", print_string}, {"%i", print_int}, {"%%", print_modulus}};
 
 	va_start(args, format);
 	if (format == NULL)
@@ -24,7 +24,7 @@ Loop:
 		 * intialize this to (arr.length - 1). i am using 0 because
 		 * currently specifiers array only contains one item which is at index 0
 		 */
-		j = 3;
+		j = 4;
 		while (j >= 0)
 		{
 			/**

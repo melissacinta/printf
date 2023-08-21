@@ -4,6 +4,7 @@
  * print_numbers -  recursively prints out numbers in base 10 irrespective
  * of their signage
  * @n: integer to be printed
+ * @i: counter
  * Return: number of passes
  */
 int print_numbers(int n, unsigned int i)
