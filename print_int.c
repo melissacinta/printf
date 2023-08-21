@@ -8,15 +8,9 @@
 
 int print_int(va_list data)
 {
-	unsigned int i = 0;
+	unsigned int i = 1;
 	int num = va_arg(data, int);
 
-	/**
-	 * here i am calling a recursive function to handle printing of numbers
-	 * this function is exactly similar to task 101 of more functions
-	 * project the only difference is have to keep track of the specifier
-	 * count
-	 */
 	i = print_numbers(num, i);
 
 	return (i);
