@@ -9,51 +9,52 @@
  */
 int print_numbers(int n, unsigned int i)
 {
-	int n1;
+	int num, remainder = n % 10, digit;
+	int exp = 1;
 
-	if (n == INT_MIN)
-	{
-		n1 = INT_MAX;
-		_putchar('-');
-		i++;
-	} else if (n < 0)
-	{
-		n1 = -n;
-		_putchar('-');
-		i++;
-	} else
-	{
-		n1 = n;
-	}
-	/* my base case for the recursion */
-	if ((n1 / 10) == 0)
-	{
-		_putchar(n1 + '0');
-		return (++i);
-	}
+	n = n / 10;
+	num = n;
 
-	i = print_numbers((n1 / 10), i + 1);
-	_putchar((n1 % 10) + '0');
+	if (remainder < 0)
+	{
+		_putchar('-');
+		num = -num;
+		n = -n;
+		remainder = -remainder;
+		i++;
+	}
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
+	}
+	_putchar(remainder + '0');
 	return (i);
 }
 /**
-* print_dec - function to print decimal integers denoted by % d
-* @data: the character value expected form the va_list
-* Return: returns the number of character printed
-*/
+ * print_dec - function to print decimal integers denoted by % d
+ * @data: the character value expected form the va_list
+ * Return: returns the number of character printed
+ */
 
 int print_dec(va_list data)
 {
-	unsigned int i = 0;
-	int num = va_arg(data, int);
+	int n = va_arg(data, int);
+	unsigned int  i = 1;
 
-	/**
-	 * here i am calling a recursive function to handle printing of numbers
-	 * this function is exactly similing to task 101 of more functions
-	 * project the only difference is have to keep track of the specifier
-	 * count
-	 */
-	i = print_numbers(num, i);
+	i = print_numbers(n, i);
 
 	return (i);
 }
