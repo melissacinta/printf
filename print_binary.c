@@ -9,7 +9,7 @@
 
 int print_binary(va_list data)
 {
-	int i = 0;
+	int i = 0, count;
 	int num = (int)va_arg(data, unsigned int);
 	int *arr_bin;
 
@@ -34,7 +34,7 @@ int print_binary(va_list data)
 		num /= 2;
 		i++;
 	}
-
+	count = i;
 	while (i > 0)
 	{
 		_putchar(arr_bin[i - 1] + '0');
@@ -42,5 +42,5 @@ int print_binary(va_list data)
 	}
 
 	free(arr_bin);
-	return (i);
+	return (count);
 }
