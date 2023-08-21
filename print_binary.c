@@ -17,7 +17,8 @@ int print_binary(va_list data)
 		return (-1);
 
 	arr_bin = malloc(sizeof(int) * 17);
-	/* I allocated 17 here because the 100,000 in binary has only 17 chacacters
+	/**
+	 * I allocated 17 here because the 100,000 in binary has only 17 chacacters
 	 * so I'm hoping they dont test it with more than 100k integer hahaha!
 	 */
 
