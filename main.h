@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * struct formats - a data type, holds the variety of specifiers
