@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-Loop:
 	while (format[i] != '\0')
 	{
 		/**
@@ -38,7 +37,7 @@ Loop:
 				length += arr[j].f_ptr(args);
 				/* jump to Loop if we succesfully enter this statement */
 				i = i + 2;
-				goto Loop;
+				break;
 			}
 			j--;
 		}
