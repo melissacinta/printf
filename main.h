@@ -29,5 +29,7 @@ int print_binary(va_list data);
 int print_rot_13(va_list data);
 int print_uns_dec(va_list data);
 int print_uns_oct(va_list data);
+int print_hex_upper_case(va_list data);
+int print_hex(va_list data);
 
 #endif
