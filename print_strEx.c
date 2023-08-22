@@ -12,12 +12,20 @@ int print_strEx(va_list data)
 
 	while (*str != '\0')
 	{
-		if (*str < 32 || *str == '\n' || *str >= 127)
+		if (*str < 32 || *str >= 127)
 		{
 			count += _putchar('\\');
 			count += _putchar('x');
-			count += _putchar('0' + ((*str >> 4) & 0xF));
-			count += _putchar('0' + (*str & 0xF));
+			if (*str == '\n')
+			{
+				count += _putchar('0');
+				count += _putchar('A');
+			}
+			else
+			{
+				count += _putchar('0' + ((*str >> 4) & 0xF));
+				count += _putchar('0' + (*str & 0xF));
+			}
 		}
 		else
 		{
