@@ -16,6 +16,11 @@ int print_binary(va_list data)
 	if (num < 0)
 		num = num * -1;
 
+	if (!num)
+	{
+		_putchar(48);
+		return (1);
+	}
 	arr_bin = malloc(sizeof(int) * 17);
 	/**
 	 * I allocated 17 here because the 100,000 in binary has only 17 chacacters
