@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_rot-13 - prints the rot encoded version of the string
+ * print_rot_13 - prints the rot encoded version of the string passed in
  * @data: the va_list passed from the printf function
- * Return: returns the total number of the
+ * Return: returns the total number of the characters encoded
  */
 
 int print_rot_13(va_list data)
@@ -17,7 +17,14 @@ int print_rot_13(va_list data)
 	char encoded[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
 	if (str == NULL)
-		return (-1);
+	{
+		str = "(null)";
+		for (z = 0; z < 6; z++)
+		{
+			_putchar(str[z]);
+		}
+		return (6);
+	}
 
 	while (str[x])
 	{
