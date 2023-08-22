@@ -10,10 +10,13 @@
 int print_binary(va_list data)
 {
 	int i = 0, count;
-	unsigned int num = va_arg(data, unsigned int);
+	int num = va_arg(data, int);
 	int *arr_bin;
 
-	arr_bin = malloc(sizeof(unsigned int) * 17);
+	if (num < 0)
+		num = num * -1;
+
+	arr_bin = malloc(sizeof(int) * 17);
 	/**
 	 * I allocated 17 here because the 100,000 in binary has only 17 chacacters
 	 * so I'm hoping they dont test it with more than 100k integer hahaha!
