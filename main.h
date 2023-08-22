@@ -32,5 +32,6 @@ int print_uns_oct(va_list data);
 int print_hex_upper_case(va_list data);
 int print_hex(va_list data);
 int print_revstr(va_list data);
+int print_strEx(va_list data);
 
 #endif

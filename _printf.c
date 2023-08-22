@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	{"%s", print_string}, {"%i", print_int}, {"%%", print_modulus},
 	{"%b", print_binary}, {"%R", print_rot_13}, {"%u", print_uns_dec},
 	{"%o", print_uns_oct}, {"%x", print_hex}, {"%X", print_hex_upper_case},
-	{"%r", print_revstr}};
+	{"%r", print_revstr}, {"%S", print_strEx}};
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 Loop:
 	while (format[i] != '\0')
 	{
-		j = 11;
+		j = 12;
 		while (j >= 0)
 		{
 			/**
