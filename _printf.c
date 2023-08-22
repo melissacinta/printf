@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	specifier arr[] = {{"%d", print_dec}, {"%c", print_char},
 	{"%s", print_string}, {"%i", print_int}, {"%%", print_modulus},
 	{"%b", print_binary}, {"%R", print_rot_13}, {"%u", print_uns_dec},
-	{"%o", print_uns_oct}};
+	{"%o", print_uns_oct}, {"%x", print_hex}, {"%X", print_hex_upper_case}};
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -26,7 +26,7 @@ Loop:
 		 * intialize this to (arr.length - 1). i am using 0 because
 		 * currently specifiers array only contains one item which is at index 0
 		 */
-		j = 8;
+		j = 10;
 		while (j >= 0)
 		{
 			/**
