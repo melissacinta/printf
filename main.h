@@ -27,4 +27,6 @@ int print_string(va_list data);
 int print_modulus(va_list data);
 int print_binary(va_list data);
 int print_rot_13(va_list data);
+int print_uns_dec(va_list data);
+
 #endif
