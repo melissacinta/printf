@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_strEx - prints a string with non-printable characters escaped
  * @data: the string to be printed
@@ -5,6 +7,7 @@
  */
 int print_strEx(va_list data)
 {
+	char *str = va_arg(data, char *);
 	int count = 0;
 
 	while (*str != '\0')
