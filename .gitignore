@@ -2,3 +2,5 @@ main.c
 a
 _printfcopy.c
 *.swp
+_printmaincopy.c
+_printf2.c
