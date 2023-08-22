@@ -12,7 +12,7 @@ int print_strEx(va_list data)
 
 	while (*str != '\0')
 	{
-		if (*str < 32 || *str >= 127)
+		if (*str < 32 || *str == '\n' || *str >= 127)
 		{
 			count += _putchar('\\');
 			count += _putchar('x');
