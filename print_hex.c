@@ -1,7 +1,5 @@
 #include "main.h"
 
-int print_hexadecimal(unsigned int n, unsigned int i, char cased);
-
 /**
  * print_hex - function to print unsigned hexadecimal integers (lowercase)
  * @data: the character value expected from the va_list
